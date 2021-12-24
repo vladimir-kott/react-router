@@ -1,5 +1,5 @@
 import NavBar from "./components/navBar"
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Dashboard from '../app/components/dashboard'
 import Login from '../app/components/login'
 import Posts from '../app/components/posts'
@@ -11,10 +11,12 @@ function App() {
     <div>
       <NavBar/>
       <h1>App</h1>
-      <Route path='/dashboard' component={Dashboard}/>
-      <Route path='/login' component={Login}/>
-      <Route path='/posts' component={Posts}/>
-      <Route path='/' component={Home}/>
+      <Switch>
+        <Route path='/dashboard' component={Dashboard}/>
+        <Route path='/login' component={Login}/>
+        <Route path='/posts' component={Posts}/>
+        <Route path='/' exact component={Home}/>
+      </Switch>
     </div>
   );
 }
