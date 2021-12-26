@@ -5,16 +5,18 @@ import Login from '../app/components/login'
 import Posts from '../app/components/posts'
 import Home from '../app/components/home'
 
-
 function App() {
   return (
     <div>
       <NavBar/>
       <h1>App</h1>
       <Switch>
-        <Route path='/dashboard' component={Dashboard}/>
+        <Route 
+          path='/dashboard' 
+          component={Dashboard}
+        />
         <Route path='/login' component={Login}/>
-        <Route path='/posts' component={Posts}/>
+        <Route path='/posts/:postId?' component={Posts}/>
         <Route path='/' exact component={Home}/>
       </Switch>
     </div>
